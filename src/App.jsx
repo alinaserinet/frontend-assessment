@@ -31,8 +31,10 @@ const App = () => {
   }, []);
 
   function handleDoctorSave(value) {
-    console.log(value);
-    fetch(`/profile.json?isBookmarked:${value}`).then(console.log);
+    setDoctorData((prevState) => ({
+      ...prevState,
+      isBookmarked: value,
+    }));
   }
 
   if (!doctorData) return null;
