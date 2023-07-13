@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Doctor, Service } from './components';
+import { Doctor, Service, Skeleton } from './components';
 import {
   MainContainer,
   MainContent,
@@ -53,10 +53,10 @@ const App = () => {
             profileUrl={doctorData?.profileUrl}
             onSave={handleDoctorSave}
           />
-          <div className="h-56 rounded-lg bg-white/60" />
+          <Skeleton className="h-56" />
         </MainContent>
         <MainSidebar>
-          <div className="h-52 rounded-lg bg-white/60" />
+          <Skeleton className="h-52" />
           <Service waitingTime={doctorData?.waitingTime} />
         </MainSidebar>
       </MainContainer>
