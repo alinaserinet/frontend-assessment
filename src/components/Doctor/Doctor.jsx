@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { numbersFormatter, share } from '../../utils';
 import Avatar from '../Avatar';
-import { LikeIcon, SaveIcon, ShareIcon, TrustIcon, ViewIcon } from '../icons';
+import { SaveButton } from '../Button';
+import { LikeIcon, ShareIcon, TrustIcon, ViewIcon } from '../icons';
 
 const Doctor = ({
   name,
@@ -32,16 +33,7 @@ const Doctor = ({
     <section className="rounded-lg bg-white p-5">
       <header className="mb-4 flex justify-between">
         <div>
-          <button
-            className="mr-4 inline-block"
-            onClick={() => onSave(!isBookmarked)}
-          >
-            <SaveIcon
-              className="mr-1 inline-block align-middle"
-              fill={isBookmarked}
-            />
-            <span className="inline-block align-middle">Save</span>
-          </button>
+          <SaveButton isBookmarked={isBookmarked} onSave={onSave} />
           {isDoctorDataCopied ? (
             <span className="inline-block text-gray-700">data was copied</span>
           ) : (
