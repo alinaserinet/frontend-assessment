@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-import Button from '../button/button';
+import Button from '../Button/Button';
 
-export const Service = ({ waitingTime }) => {
+const Service = ({ waitingTime }) => {
   const [waitingTimeText, setWaitingTimeText] = useState('');
+
   useEffect(() => {
     if (waitingTime === 0) {
       setWaitingTimeText('Less than half an hour');
@@ -32,9 +32,4 @@ export const Service = ({ waitingTime }) => {
     </div>
   );
 };
-
-Service.prototype = {
-  waitingTime: PropTypes.number,
-};
-
 export default Service;

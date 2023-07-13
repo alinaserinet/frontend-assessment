@@ -1,4 +1,4 @@
-export const LikeIcon = ({ ...rest }) => {
+const LikeIcon = ({ ...rest }) => {
   return (
     <svg
       width="16"
@@ -22,3 +22,4 @@ export const LikeIcon = ({ ...rest }) => {
     </svg>
   );
 };
+export default LikeIcon;

@@ -1,4 +1,4 @@
-export const Avatar = ({ src }) => {
+const Avatar = ({ src }) => {
   return (
     <img
       src={src}
@@ -7,3 +7,4 @@ export const Avatar = ({ src }) => {
     />
   );
 };
+export default Avatar;

@@ -1,4 +1,4 @@
-export const ViewIcon = ({ ...rest }) => {
+const ViewIcon = ({ ...rest }) => {
   return (
     <svg
       width="18"
@@ -18,3 +18,4 @@ export const ViewIcon = ({ ...rest }) => {
     </svg>
   );
 };
+export default ViewIcon;

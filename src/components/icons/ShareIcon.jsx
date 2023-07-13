@@ -1,4 +1,4 @@
-export const ShareIcon = ({ ...rest }) => {
+const ShareIcon = ({ ...rest }) => {
   return (
     <svg
       width="18"
@@ -18,3 +18,4 @@ export const ShareIcon = ({ ...rest }) => {
     </svg>
   );
 };
+export default ShareIcon;

@@ -1,4 +1,4 @@
-export const SaveIcon = ({ fill, ...rest }) => {
+const SaveIcon = ({ fill, ...rest }) => {
   return (
     <svg
       width="15"
@@ -19,3 +19,4 @@ export const SaveIcon = ({ fill, ...rest }) => {
     </svg>
   );
 };
+export default SaveIcon;

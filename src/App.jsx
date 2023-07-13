@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Service from './components/service';
+import { Service } from './components';
 import logo from './logo.svg';
 
 const App = () => {

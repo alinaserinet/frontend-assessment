@@ -1,4 +1,4 @@
-export const TrustIcon = ({ ...rest }) => {
+const TrustIcon = ({ ...rest }) => {
   return (
     <svg
       width="22"
@@ -23,3 +23,4 @@ export const TrustIcon = ({ ...rest }) => {
     </svg>
   );
 };
+export default TrustIcon;
