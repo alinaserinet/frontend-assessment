@@ -11,5 +11,6 @@ module.exports = init({
     'react/sort-default-props': 'warn',
     'react/no-object-type-as-default-prop': 'off',
     'import/no-named-as-default': 'off',
+    camelcase: ['warn', { properties: 'always' }],
   },
 });
