@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { getDoctorData } from './api';
 import { Doctor, Service, Skeleton } from './components';
 import {
   MainContainer,
@@ -14,20 +15,7 @@ const App = () => {
   const [doctorData, setDoctorData] = useState(null);
 
   useEffect(() => {
-    fetch('/profile.json')
-      .then((response) => response.json())
-      .then((data) => setDoctorData(data));
-    //   Return Data:
-    //   name,
-    //   family,
-    //   image,
-    //   viewCount,
-    //   isBookmarked,
-    //   profileUrl,
-    //   expertise,
-    //   satisfaction,
-    //   commentsCount,
-    //   waitingTime
+    getDoctorData().then((data) => setDoctorData(data));
   }, []);
 
   function handleDoctorSave(value) {
