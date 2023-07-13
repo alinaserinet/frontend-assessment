@@ -13,7 +13,7 @@
  */
 
 /**
- *
+ * getting doctor data from api
  * @returns {Promise<DoctorData>}
  */
 export function getDoctorData() {
