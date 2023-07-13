@@ -14,7 +14,7 @@ export const SaveIcon = ({ fill, ...rest }) => {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        fill={fill ? "currentColor" : ""}
+        fill={fill ? 'currentColor' : ''}
       />
     </svg>
   );
