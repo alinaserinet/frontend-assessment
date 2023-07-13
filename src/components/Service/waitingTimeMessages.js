@@ -16,7 +16,7 @@ const waitingTimeMessages = {
 export default waitingTimeMessages;
 
 /**
- * return a waiting time text according to waiting time value
+ * return a waiting-time-text according to waiting-time-value
  * @param {number} waitingTime
  * @returns {string}
  */
