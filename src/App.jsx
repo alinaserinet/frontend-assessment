@@ -19,6 +19,7 @@ const App = () => {
   }, []);
 
   function handleDoctorSave(value) {
+    // must send request to the server to change it but can not change json file
     setDoctorData((prevState) => ({
       ...prevState,
       isBookmarked: value,

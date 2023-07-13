@@ -15,7 +15,7 @@ const share = async (data) => {
   try {
     const canShare = navigator.canShare({ url, text, title, files });
     if (!canShare) {
-      throw new Error('share don not supported by browser');
+      throw new Error('share do not supported by browser');
     }
     await navigator.share({ url, text, title, files });
     return { wasShared: true, error: null, wasCopied: false };
