@@ -1,4 +1,8 @@
 const MainContent = ({ children }) => {
-  return <div className="col-span-2 flex flex-col gap-5">{children}</div>;
+  return (
+    <div className="col-span-1 flex flex-col gap-5 lg:col-span-2">
+      {children}
+    </div>
+  );
 };
 export default MainContent;
