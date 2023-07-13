@@ -1,20 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import Button from '../Button/Button';
+import waitingTimeMessages from './waitingTimeMessages';
 
 const Service = ({ waitingTime }) => {
   const [waitingTimeText, setWaitingTimeText] = useState('');
 
   useEffect(() => {
-    if (waitingTime === 0) {
-      setWaitingTimeText('Less than half an hour');
-    } else if (waitingTime === 1) {
-      setWaitingTimeText('Less than an hour');
-    } else if (waitingTime === 2) {
-      setWaitingTimeText('Less than two hours');
-    } else if (waitingTime === 3) {
-      setWaitingTimeText('More than two hours');
-    }
+    const waitingTimeMessage = waitingTimeMessages[waitingTime].en || '';
+    setWaitingTimeText(waitingTimeMessage);
   }, [waitingTime]);
 
   return (
