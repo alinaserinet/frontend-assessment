@@ -7,16 +7,16 @@
 
 /**
  * share data using the navigator, or copy to the clipboard when Abort Error
- * @param {Object} data
- * @param {string | undefined} data.url
- * @param {string | undefined} data.title
- * @param {string | undefined} data.text
- * @param {File[] | undefined} data.files
+ * @param {ShareData} data
  * @returns {Promise<Share>}
  */
 const share = async (data) => {
   const { url = '', text = '', title = '', files } = data;
   try {
+    const canShare = navigator.canShare({ url, text, title, files });
+    if (!canShare) {
+      throw new Error('share don not supported by browser');
+    }
     await navigator.share({ url, text, title, files });
     return { wasShared: true, error: null, wasCopied: false };
   } catch (error) {
