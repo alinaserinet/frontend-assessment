@@ -14,3 +14,12 @@ const waitingTimeMessages = {
 };
 
 export default waitingTimeMessages;
+
+/**
+ * return a waiting time text according to waiting time value
+ * @param {number} waitingTime
+ * @returns {string}
+ */
+export const getWaitingTimeText = (waitingTime) => {
+  return waitingTimeMessages[waitingTime]?.en || '';
+};
