@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { getDoctorData } from './api';
-import { Doctor, Service, Skeleton } from './components';
+import { DoctorHead, Service, Skeleton } from './components';
 import {
   MainContainer,
   MainContent,
@@ -32,7 +32,7 @@ const App = () => {
       <MainHeader logo={logo} />
       <MainContainer>
         <MainContent>
-          <Doctor
+          <DoctorHead
             name={doctorData?.name}
             family={doctorData?.family}
             commentsCount={doctorData?.commentsCount}
