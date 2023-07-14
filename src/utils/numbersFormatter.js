@@ -17,7 +17,8 @@ const formats = {
  */
 const numbersFormatter = (number) => {
   const numberString = String(number);
-  const formatId = Math.floor(numberString.length / 3);
+  const { length: numberLength } = numberString;
+  const formatId = Math.floor((numberLength - 1) / 3);
   const suffixLength = formatId * 3;
   const prefix = (number / 10 ** suffixLength).toFixed(1);
   return parseFloat(prefix) + formats[formatId];
