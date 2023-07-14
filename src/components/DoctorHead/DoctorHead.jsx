@@ -34,10 +34,11 @@ const DoctorHead = ({
   const [isDoctorDataCopied, setIsDoctorDataCopied] = useState(false);
 
   function handleShareClick() {
+    const fullName = `${name} ${family}`;
     share({
       url: profileUrl,
-      title: `${name} ${family}`,
-      text: expertise,
+      title: fullName,
+      text: `${fullName}\n${expertise}\n`,
     }).then((result) => {
       setIsDoctorDataCopied(result.wasCopied);
       setTimeout(() => setIsDoctorDataCopied(false), 1500);
