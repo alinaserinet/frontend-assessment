@@ -2,9 +2,12 @@ import { sentences, titles } from '../../variables/en';
 import Button from '../Button/Button';
 import { getWaitingTimeText } from './waitingTimeMessages';
 
-const Service = ({ waitingTime }) => {
+const Service = ({ waitingTime, ...rest }) => {
   return (
-    <div className="flex flex-col gap-4 rounded-lg bg-white p-5 shadow-sm">
+    <div
+      className="flex flex-col gap-4 rounded-lg bg-white p-5 shadow-sm"
+      {...rest}
+    >
       <h2 className="border-b border-solid border-slate-200 pb-3 font-bold">
         {titles.ONLINE_APPOINTMENTS}
       </h2>

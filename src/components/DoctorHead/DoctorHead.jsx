@@ -29,6 +29,7 @@ const DoctorHead = ({
   onSave,
   profileUrl,
   waitingTime,
+  ...rest
 }) => {
   const [isDoctorDataCopied, setIsDoctorDataCopied] = useState(false);
 
@@ -44,7 +45,7 @@ const DoctorHead = ({
   }
 
   return (
-    <section className="rounded-lg bg-white p-5">
+    <section className="rounded-lg bg-white p-5" {...rest}>
       <header className="mb-4 flex justify-between">
         <div>
           <SaveButton isBookmarked={isBookmarked} onSave={onSave} />

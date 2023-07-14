@@ -1,9 +1,12 @@
 import Avatar from '../Avatar/Avatar';
 import { TrustIcon } from '../icons';
 
-const BioCard = ({ image, fullName, isTrust, expertise }) => {
+const BioCard = ({ image, fullName, isTrust, expertise, ...rest }) => {
   return (
-    <main className="flex items-center gap-5 rounded-lg bg-slate-50 p-5">
+    <main
+      className="flex items-center gap-5 rounded-lg bg-slate-50 p-5"
+      {...rest}
+    >
       <div>
         <Avatar src={image} />
       </div>

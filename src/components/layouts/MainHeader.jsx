@@ -1,6 +1,6 @@
-const MainHeader = ({ logo }) => {
+const MainHeader = ({ logo, ...rest }) => {
   return (
-    <header className="flex h-16 bg-white opacity-60">
+    <header className="flex h-16 bg-white opacity-60" {...rest}>
       <div className="container mx-auto flex items-center justify-between px-3 2xl:px-0">
         <div className="flex items-center gap-2">
           <img src={logo} alt="" />
