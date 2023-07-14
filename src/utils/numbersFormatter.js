@@ -12,7 +12,6 @@ const formats = {
 /**
  * format numbers using 'K', 'M', 'B', 'T' Keywords
  * @param {Number} number
- * @param {String} separator
  * @returns {String}
  */
 const numbersFormatter = (number) => {
