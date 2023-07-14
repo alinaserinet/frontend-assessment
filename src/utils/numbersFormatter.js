@@ -15,17 +15,11 @@ const formats = {
  * @param {String} separator
  * @returns {String}
  */
-const numbersFormatter = (number, separator = '.') => {
-  const numberStr = String(number);
-  const rightZerosCount = numberStr.match(/0*$/)?.[0].length;
-  const formatId = Math.round(rightZerosCount / 3);
-  const formatSuffix = formats[formatId] || '';
-  const lastRestIndex = numberStr.length - formatId * 3;
-  const rest = numberStr.substring(0, lastRestIndex);
-  const firstSuffixChar = numberStr.charAt(lastRestIndex);
-  if (firstSuffixChar !== '0' && formatSuffix !== '') {
-    return rest + separator + firstSuffixChar + formatSuffix;
-  }
-  return rest + formatSuffix;
+const numbersFormatter = (number) => {
+  const numberString = String(number);
+  const formatId = Math.floor(numberString.length / 3);
+  const suffixLength = formatId * 3;
+  const prefix = (number / 10 ** suffixLength).toFixed(1);
+  return parseFloat(prefix) + formats[formatId];
 };
 export default numbersFormatter;
