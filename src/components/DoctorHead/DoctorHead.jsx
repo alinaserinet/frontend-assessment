@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
-import { numbersFormatter, share } from '../../utils';
+import { share } from '../../utils';
 import { titles } from '../../variables/en';
-import { SatisfactionBadge } from '../badges';
+import { SatisfactionBadge, ViewsCountBadge } from '../badges';
 import { SaveButton, ShareButton } from '../Button';
-import { ViewIcon } from '../icons';
 import DoctorBio from './DoctorBio';
 
 function isDoctorTrusted(satisfaction, commentsCount, waitingTime) {
@@ -54,12 +53,7 @@ const DoctorHead = ({
             onShare={handleShareClick}
           />
         </div>
-        <div>
-          <ViewIcon className="mr-1 inline-block align-middle" />
-          <span className="inline-block align-middle">
-            {numbersFormatter(viewCount)}
-          </span>
-        </div>
+        <ViewsCountBadge views={viewCount} />
       </header>
       <DoctorBio
         fullName={`${name} ${family}`}
