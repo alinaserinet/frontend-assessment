@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { numbersFormatter, share } from '../../utils';
+import { titles } from '../../variables/en';
 import { SatisfactionBadge } from '../badges';
 import { SaveButton, ShareButton } from '../Button';
 import { ViewIcon } from '../icons';
@@ -69,7 +70,9 @@ const DoctorHead = ({
       <footer className="mt-4 flex items-center justify-center gap-3">
         <SatisfactionBadge satisfaction={satisfaction} />
         <div>
-          <span>Satisfaction ({commentsCount} comments)</span>
+          <span>
+            {titles.SATISFACTION} ({commentsCount} {titles.COMMENTS})
+          </span>
         </div>
       </footer>
     </section>

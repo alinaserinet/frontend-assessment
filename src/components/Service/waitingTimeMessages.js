@@ -3,14 +3,16 @@
  * @property {string} en
  */
 
+import { messages } from '../../variables/en';
+
 /**
  * @type {Object<number, WaitingTimeMessage>}
  */
 const waitingTimeMessages = {
-  0: { en: 'Less than half an hour' },
-  1: { en: 'Less than an hour' },
-  2: { en: 'Less than two hours' },
-  3: { en: 'More than two hours' },
+  0: { en: messages.WAITING_LESS_1H },
+  1: { en: messages.WAITING_MORE_1H },
+  2: { en: messages.WAITING_LESS_2H },
+  3: { en: messages.WAITING_MORE_2H },
 };
 
 export default waitingTimeMessages;
