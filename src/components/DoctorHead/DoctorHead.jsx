@@ -16,7 +16,7 @@ function isDoctorTrusted(satisfaction, commentsCount, waitingTime) {
   return waitingTime === 1;
 }
 
-const Doctor = ({
+const DoctorHead = ({
   name,
   family,
   image,
@@ -79,4 +79,4 @@ const Doctor = ({
     </section>
   );
 };
-export default Doctor;
+export default DoctorHead;
