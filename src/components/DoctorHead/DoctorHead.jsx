@@ -65,7 +65,7 @@ const DoctorHead = ({
       <footer className="mt-4 flex items-center justify-center gap-3">
         <SatisfactionBadge satisfaction={satisfaction} />
         <div>
-          <span>
+          <span className="text-sm sm:text-base">
             {titles.SATISFACTION} ({commentsCount} {titles.COMMENTS})
           </span>
         </div>
