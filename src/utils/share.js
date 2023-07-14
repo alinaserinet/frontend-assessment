@@ -11,15 +11,15 @@
  * @returns {Promise<Share>}
  */
 const share = async (data) => {
-  const { url = '', text = '', title = '', files } = data;
   try {
-    const canShare = navigator.canShare({ url, text, title, files });
+    const canShare = navigator.canShare(data);
     if (!canShare) {
       throw new Error('share do not supported by browser');
     }
-    await navigator.share({ url, text, title, files });
+    await navigator.share(data);
     return { wasShared: true, error: null, wasCopied: false };
   } catch (error) {
+    const { url = '', text = '', title = '' } = data;
     const copyText = `${title}\n${text}\n${url}`;
     await navigator.clipboard.writeText(copyText);
     return { wasShared: false, error, wasCopied: true };
