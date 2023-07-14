@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
 import { numbersFormatter, share } from '../../utils';
+import { SatisfactionBadge } from '../badges';
 import { SaveButton, ShareButton } from '../Button';
-import { LikeIcon, ViewIcon } from '../icons';
+import { ViewIcon } from '../icons';
 import DoctorBio from './DoctorBio';
 
 function isDoctorTrusted(satisfaction, commentsCount, waitingTime) {
@@ -66,12 +67,7 @@ const DoctorHead = ({
         isTrust={isDoctorTrusted(satisfaction, commentsCount, waitingTime)}
       />
       <footer className="mt-4 flex items-center justify-center gap-3">
-        <div className="inline-block rounded-full bg-green-600 px-5 py-1 text-white">
-          <LikeIcon className="mr-1 inline-block align-middle text-inherit" />
-          <span className="inline-block align-middle font-bold">
-            {satisfaction}%
-          </span>
-        </div>
+        <SatisfactionBadge satisfaction={satisfaction} />
         <div>
           <span>Satisfaction ({commentsCount} comments)</span>
         </div>
