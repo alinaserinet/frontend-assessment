@@ -42,6 +42,7 @@ const App = () => {
             satisfaction={doctorData?.satisfaction}
             viewCount={doctorData?.viewCount}
             profileUrl={doctorData?.profileUrl}
+            waitingTime={doctorData?.waitingTime}
             onSave={handleDoctorSave}
           />
           <Skeleton className="h-56" />

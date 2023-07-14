@@ -1,9 +1,20 @@
 import { useState } from 'react';
 
 import { numbersFormatter, share } from '../../utils';
-import Avatar from '../Avatar';
 import { SaveButton, ShareButton } from '../Button';
-import { LikeIcon, TrustIcon, ViewIcon } from '../icons';
+import { LikeIcon, ViewIcon } from '../icons';
+import BioCard from './BioCard';
+
+function isDoctorTrusted(satisfaction, commentsCount, waitingTime) {
+  console.log(satisfaction);
+  if (satisfaction <= 90) {
+    return false;
+  }
+  if (commentsCount < 100) {
+    return false;
+  }
+  return waitingTime === 1;
+}
 
 const Doctor = ({
   name,
@@ -16,6 +27,7 @@ const Doctor = ({
   commentsCount,
   onSave,
   profileUrl,
+  waitingTime,
 }) => {
   const [isDoctorDataCopied, setIsDoctorDataCopied] = useState(false);
 
@@ -29,6 +41,7 @@ const Doctor = ({
       setTimeout(() => setIsDoctorDataCopied(false), 1500);
     });
   }
+
   return (
     <section className="rounded-lg bg-white p-5">
       <header className="mb-4 flex justify-between">
@@ -46,20 +59,12 @@ const Doctor = ({
           </span>
         </div>
       </header>
-      <main className="flex items-center gap-5 rounded-lg bg-slate-50 p-5">
-        <div>
-          <Avatar src={image} />
-        </div>
-        <div>
-          <div>
-            <h2 className="mr-2 inline-block align-middle font-bold">
-              {name} {family}
-            </h2>
-            <TrustIcon className="inline-block align-middle" />
-          </div>
-          <h3 className="mt-1 text-gray-700">{expertise}</h3>
-        </div>
-      </main>
+      <BioCard
+        fullName={`${name} ${family}`}
+        image={image}
+        expertise={expertise}
+        isTrust={isDoctorTrusted(satisfaction, commentsCount, waitingTime)}
+      />
       <footer className="mt-4 flex items-center justify-center gap-3">
         <div className="inline-block rounded-full bg-green-600 px-5 py-1 text-white">
           <LikeIcon className="mr-1 inline-block align-middle text-inherit" />
