@@ -7,7 +7,6 @@ import { SaveButton, ShareButton } from '../Button';
 import DoctorBio from './DoctorBio';
 
 function isDoctorTrusted(satisfaction, commentsCount, waitingTime) {
-  console.log(satisfaction);
   if (satisfaction <= 90) {
     return false;
   }
