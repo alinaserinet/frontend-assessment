@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { numbersFormatter, share } from '../../utils';
 import { SaveButton, ShareButton } from '../Button';
 import { LikeIcon, ViewIcon } from '../icons';
-import BioCard from './BioCard';
+import DoctorBio from './DoctorBio';
 
 function isDoctorTrusted(satisfaction, commentsCount, waitingTime) {
   console.log(satisfaction);
@@ -59,7 +59,7 @@ const DoctorHead = ({
           </span>
         </div>
       </header>
-      <BioCard
+      <DoctorBio
         fullName={`${name} ${family}`}
         image={image}
         expertise={expertise}
